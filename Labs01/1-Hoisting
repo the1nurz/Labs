@@ -1,0 +1,5 @@
+function hoist() {
+    const massage = "Hello world";   
+    console.log(massage)
+}
+hoist()  

@@ -1,0 +1,11 @@
+const values = [true, 42, "Hello World", Symbol("id"), null, undefined, BigInt(9007199254741991)];
+const typeCount = {};
+for (const value of values) {
+    const type = typeof value;
+    const t = Array.isArray(value) ? 'array' : type;
+    if (!(t in typeCount)) {
+        typeCount[t] = 0;
+    }
+    typeCount[t] += 1;
+}
+console.dir(typeCount);
