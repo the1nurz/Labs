@@ -1,6 +1,6 @@
 //1.Функція-генератор для нескінченної послідовності чисел Фібоначчі
 function* infiniteFibonacci() {
-    //Використовуємо BigInt (додаємо 'n' в кінці числа), 
+    //використовуємо BigInt (додаємо 'n' в кінці числа), 
     //щоб уникнути втрати точності при роботі з дуже великими числами, 
     //оскільки числа Фібоначчі швидко зростають.
     let a = 0n;
@@ -14,7 +14,7 @@ function* infiniteFibonacci() {
     }
 }
 
-//Допоміжна функція для створення затримки в часі.
+//допоміжна функція для створення затримки в часі.
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 //2.Функція, яка зчитує дані з ітератора протягом заданого часу
@@ -57,12 +57,13 @@ async function consumeWithTimeout(iterator, timeoutSeconds) {
     console.log(`Час вийшов. Всього оброблено елементів: ${count}`);
 }
 
-//Головна функція для запуску програми
+//головна функція для запуску програми
 async function main() {
     const fibGen = infiniteFibonacci();
     
     await consumeWithTimeout(fibGen, 2); 
 }
+
 
 
 main();
